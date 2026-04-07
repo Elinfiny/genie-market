@@ -3,6 +3,7 @@ cd /d C:\GenieMarketSite
 
 git init
 git branch -M main
+git remote remove origin 2>nul
 git remote add origin https://github.com/Elinfiny/genie-market.git
 git pull origin main --allow-unrelated-histories
 
