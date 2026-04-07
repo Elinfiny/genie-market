@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genie Market</title>
+  <meta
+    name="description"
+    content="Genie Market is a product analytics and content performance platform that helps users organize short-form content insights and product validation workflows."
+  />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --panel-2: #1e2330;
+      --text: #f4f7fb;
+      --muted: #b7c0d1;
+      --line: #2c3445;
+      --accent: #4ea1ff;
+      --accent-2: #8bc3ff;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0f1115 0%, #111621 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15, 17, 21, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.96rem;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.08;
+    }
+
+    .hero p.lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.92rem;
+    }
+
+    .hero-side h2,
+    section h2 {
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .hero-side p,
+    section p,
+    section li {
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 18px 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .list {
+      padding-left: 18px;
+      margin: 12px 0 0;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      background: rgba(78, 161, 255, 0.08);
+      border-radius: 12px;
+      margin-top: 18px;
+      color: var(--text);
+    }
+
+    .footer {
+      margin-top: 42px;
+      padding: 28px 0 50px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-2,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Genie Market</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#integration">TikTok Integration</a>
+        <a href="#data">Data Usage</a>
+        <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="card">
+          <h1>Product analytics and content validation for short-form commerce workflows.</h1>
+          <p class="lead">
+            Genie Market is a web service designed to help organize product research,
+            short-form content performance, and internal reporting workflows for
+            commerce-focused content operations.
+          </p>
+          <p class="lead">
+            The service is used to review content metadata, structure internal datasets,
+            and support operational decisions around product validation and media performance.
+          </p>
+
+          <div class="badge-row">
+            <div class="badge">Short-form content tracking</div>
+            <div class="badge">Internal analytics workflows</div>
+            <div class="badge">Product validation support</div>
+            <div class="badge">TikTok-authorized data access</div>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <h2>Service Summary</h2>
+          <p>
+            Genie Market uses authorized integrations to retrieve limited account and
+            content information required for internal reporting, content review, and
+            workflow automation.
+          </p>
+          <p>
+            The platform is not a public social network, marketplace, or user-generated
+            community. It is a focused operational tool for organizing performance data
+            and related business workflows.
+          </p>
+          <div class="callout">
+            Privacy Policy and Terms of Service are available here:
+            <br />
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap grid-2">
+        <div class="card">
+          <h2>About Genie Market</h2>
+          <p>
+            Genie Market helps manage structured information related to short-form content,
+            product-focused media assets, and performance review workflows.
+          </p>
+          <p>
+            The service supports internal analysis of content outputs and simplifies how
+            selected data is transformed into operational datasets for reporting and review.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>What the service does</h2>
+          <ul class="list">
+            <li>Collects limited authorized account and content metadata.</li>
+            <li>Structures content records into internal workflow-ready formats.</li>
+            <li>Supports product validation and content performance review.</li>
+            <li>Helps connect approved data sources to internal automation systems.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="integration" class="section">
+      <div class="wrap grid-2">
+        <div class="card">
+          <h2>TikTok Integration</h2>
+          <p>
+            Genie Market may use TikTok Login and approved TikTok API access to retrieve
+            limited authorized information after user consent.
+          </p>
+          <p>
+            Requested scopes are limited to the minimum needed for the integration,
+            including basic profile access and video list access when approved for the app.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Authorized access only</h2>
+          <ul class="list">
+            <li>No access is attempted without explicit user authorization.</li>
+            <li>No credentials are requested directly from users for TikTok login.</li>
+            <li>Only approved scopes and authorized API flows are used.</li>
+            <li>Access can be revoked by the user through the relevant platform controls.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" class="section">
+      <div class="wrap grid-2">
+        <div class="card">
+          <h2>Data Usage</h2>
+          <p>
+            Data is used only for legitimate service functions such as content analytics,
+            workflow automation, internal reporting, product validation review, and record organization.
+          </p>
+          <p>
+            Genie Market does not sell personal data and does not use authorized data for
+            unrelated advertising brokerage or unauthorized redistribution.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Security and retention</h2>
+          <ul class="list">
+            <li>Access is limited to service operation and maintenance needs.</li>
+            <li>Sensitive integration values are stored separately from public website files.</li>
+            <li>Data is retained only as long as required for operational, legal, or security purposes.</li>
+            <li>Reasonable administrative and technical safeguards are applied.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>
+            For app review, compliance, privacy, or service-related questions, contact:
+          </p>
+          <p>
+            <a href="mailto:contact.geniemarket@gmail.com">contact.geniemarket@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="brand">Genie Market</div>
+        <p class="muted small">
+          Operational website for service information, compliance pages, and authorized integration review.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
