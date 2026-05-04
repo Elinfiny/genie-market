@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genie Market Callback</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#06111f;color:#eef4ff;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .box{max-width:760px;width:92%;background:#0d1b2d;border:1px solid #193454;border-radius:18px;padding:28px;text-align:center}
+    h1{margin:0 0 12px;font-size:34px}
+    p{margin:8px 0;color:#b8c7de;line-height:1.6;font-size:18px}
+    .ok{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:999px;background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);color:#8ef0b8;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Authorization Complete</h1>
+    <p>Genie Market received the TikTok Sandbox authorization response.</p>
+    <p class="ok">Redirecting to Demo Dashboard...</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code") || "";
+    const state = params.get("state") || "";
+    const error = params.get("error") || "";
+
+    localStorage.setItem("gm_tiktok_code", code);
+    localStorage.setItem("gm_tiktok_state", state);
+    localStorage.setItem("gm_tiktok_error", error);
+    localStorage.setItem("gm_connected", error ? "0" : "1");
+
+    setTimeout(() => {
+      window.location.href = "demo.html?connected=" + (error ? "0" : "1");
+    }, 1400);
+  </script>
+</body>
+</html>

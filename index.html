@@ -4,344 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Genie Market</title>
-  <meta
-    name="description"
-    content="Genie Market is a web application for managed TikTok creator and business accounts. The app uses authorized TikTok access to display profile and post data for analytics and reporting."
-  />
   <style>
-    :root {
-      --bg: #0b0f14;
-      --panel: #121821;
-      --panel-2: #18212d;
-      --text: #f3f7fc;
-      --muted: #b8c2d0;
-      --line: #263244;
-      --accent: #66b3ff;
-      --accent-2: #9bd1ff;
-      --ok: #9be7b0;
-      --max: 1080px;
+    :root{
+      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --accent:#4da3ff; --accent2:#7ac7ff; --success:#43d38d;
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #0b0f14 0%, #0f1520 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .wrap {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .brand {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .hero {
-      padding: 72px 0 44px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 10px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      color: var(--accent-2);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: 2.6rem;
-      line-height: 1.15;
-      max-width: 860px;
-    }
-
-    .lead {
-      max-width: 850px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 28px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      color: var(--text);
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: #08111a;
-      border-color: var(--accent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin: 28px 0 0;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 22px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.08rem;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
-    .section {
-      padding: 28px 0;
-    }
-
-    .section-title {
-      font-size: 1.7rem;
-      margin: 0 0 14px;
-    }
-
-    .section-text {
-      max-width: 900px;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .feature-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .feature-list li {
-      margin-bottom: 10px;
-    }
-
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .flow-step {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    .flow-step strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .flow-step span {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .scope-box {
-      background: rgba(102,179,255,0.08);
-      border: 1px solid rgba(102,179,255,0.24);
-      border-radius: 16px;
-      padding: 22px;
-      margin-top: 18px;
-    }
-
-    .scope-box ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
-
-    .scope-box li {
-      margin-bottom: 10px;
-      color: var(--muted);
-    }
-
-    .demo-callout {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 14px;
-      background: rgba(155,231,176,0.08);
-      border: 1px solid rgba(155,231,176,0.22);
-      color: var(--text);
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 28px 0 50px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      .grid,
-      .flow {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .brand{font-weight:700;font-size:28px}
+    .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
+    .hero{padding:48px 0 28px}
+    .badge{display:inline-block;padding:10px 14px;border:1px solid var(--line);background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;font-weight:700;font-size:14px}
+    h1{font-size:58px;line-height:1.05;margin:18px 0 18px;max-width:900px}
+    .lead{font-size:22px;line-height:1.5;color:var(--muted);max-width:920px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 24px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#04101d;border-color:#70b7ff}
+    .btn-secondary{background:var(--panel);color:var(--text)}
+    .btn:hover{opacity:.96}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+    .card{background:linear-gradient(180deg,var(--panel),#0b1627);border:1px solid var(--line);border-radius:18px;padding:22px}
+    .card h3{margin:0 0 12px;font-size:24px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+    .section-title{font-size:44px;margin:42px 0 12px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px}
+    .step b{display:block;font-size:24px;margin-bottom:10px}
+    .review-note{margin-top:24px;padding:18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    footer{padding:26px 0 8px;color:#9eb0c9}
+    @media (max-width:900px){
+      h1{font-size:42px}
+      .grid,.steps{grid-template-columns:1fr}
+      .nav{display:none}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav">
+    <div class="top">
       <div class="brand">Genie Market</div>
-      <div class="nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./demo.html">Demo Dashboard</a>
-        <a href="./privacy.html">Privacy Policy</a>
-        <a href="./terms.html">Terms of Service</a>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="demo.html">Demo Dashboard</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
-    </nav>
+    </div>
 
     <section class="hero">
-      <div class="eyebrow">Managed TikTok Account Analytics</div>
+      <span class="badge">Managed TikTok Account Analytics</span>
       <h1>Authorized TikTok profile and post display for managed creator and business accounts.</h1>
       <p class="lead">
-        Genie Market is a web application for managed TikTok creator and business accounts.
-        After a user grants permission through TikTok Login, the app retrieves basic profile
-        information and video lists to display account content on the website and support
-        reporting and analytics workflows.
+        Genie Market is a web application for managed TikTok creator and business accounts. Users connect through TikTok Login, authorize access in Sandbox, and Genie Market displays profile and recent post data in the website dashboard.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="./demo.html">Open Demo Dashboard</a>
-        <a class="btn" href="./privacy.html">Privacy Policy</a>
-        <a class="btn" href="./terms.html">Terms of Service</a>
+        <button id="connectBtn" class="btn btn-primary">Connect with TikTok</button>
+        <a class="btn btn-secondary" href="demo.html">Open Demo Dashboard</a>
+        <a class="btn btn-secondary" href="privacy.html">Privacy Policy</a>
+        <a class="btn btn-secondary" href="terms.html">Terms of Service</a>
       </div>
 
       <div class="grid">
         <div class="card">
           <h3>Authorized Access</h3>
-          <p>
-            Users connect TikTok accounts through approved TikTok Login flows and grant access
-            only to the scopes required for profile and post display.
-          </p>
+          <p>Users connect TikTok accounts through approved TikTok Login flows and grant access only to the scopes required for profile and post display.</p>
         </div>
-
         <div class="card">
           <h3>Profile and Post Display</h3>
-          <p>
-            Genie Market displays connected account information and recent posts in a website
-            dashboard for reporting, review, and managed account visibility.
-          </p>
+          <p>Genie Market displays connected account information and recent posts in a website dashboard for review, reporting, and managed account visibility.</p>
         </div>
-
         <div class="card">
           <h3>Reporting Workflow</h3>
-          <p>
-            The displayed account data supports structured reporting and analytics workflows for
-            managed TikTok creator and business accounts.
-          </p>
+          <p>The displayed account data supports structured reporting and analytics workflows for managed TikTok creator and business accounts.</p>
         </div>
       </div>
-    </section>
 
-    <section class="section">
       <h2 class="section-title">How Genie Market Works</h2>
-      <p class="section-text">
-        The application is designed for managed TikTok creator and business accounts. A user
-        authorizes access through TikTok Login, Genie Market retrieves permitted profile and
-        video list data, and the website displays the connected account’s content in a dashboard.
-      </p>
+      <div class="steps">
+        <div class="step"><b>1. Connect Account</b>User grants permission through TikTok Login.</div>
+        <div class="step"><b>2. Retrieve Profile</b>Basic account information is used to identify the connected account.</div>
+        <div class="step"><b>3. Retrieve Posts</b>The app retrieves the account's video list for website display.</div>
+        <div class="step"><b>4. Show Dashboard</b>The website displays managed account profile and recent posts.</div>
+      </div>
 
-      <div class="flow">
-        <div class="flow-step">
-          <strong>1. Connect Account</strong>
-          <span>User grants permission through TikTok Login.</span>
-        </div>
-        <div class="flow-step">
-          <strong>2. Retrieve Profile</strong>
-          <span>Basic account information is used to identify the connected account.</span>
-        </div>
-        <div class="flow-step">
-          <strong>3. Retrieve Posts</strong>
-          <span>The app retrieves the account’s video list for website display.</span>
-        </div>
-        <div class="flow-step">
-          <strong>4. Show Dashboard</strong>
-          <span>The website displays managed account profile and recent posts.</span>
-        </div>
+      <div class="review-note">
+        <b>Scopes Used:</b><br>
+        • <b>user.info.basic</b> — used to display the connected TikTok account profile information.<br>
+        • <b>video.list</b> — used to display the connected TikTok account’s recent videos on the website dashboard.
       </div>
     </section>
 
-    <section class="section">
-      <h2 class="section-title">Scopes Used</h2>
-      <div class="scope-box">
-        <ul>
-          <li><strong>user.info.basic</strong> — used to display the connected TikTok account profile information.</li>
-          <li><strong>video.list</strong> — used to display the connected TikTok account’s recent videos on the website dashboard.</li>
-        </ul>
-      </div>
-
-      <div class="demo-callout">
-        <strong>Review note:</strong> The Demo Dashboard page shows the website section where
-        connected TikTok account profile information and recent posts are displayed.
-      </div>
-    </section>
-
-    <footer>
-      <div>Contact: <a href="mailto:contact.geniemarket@gmail.com">contact.geniemarket@gmail.com</a></div>
-    </footer>
+    <footer>Contact: contact.geniemarket@gmail.com</footer>
   </div>
+
+  <script>
+    const CLIENT_KEY = "sbaw41vjjdrdrlgz0t";
+    const REDIRECT_URI = "https://elinfiny.github.io/genie-market/callback.html";
+    const SCOPE = "user.info.basic,video.list";
+    const STATE = "genie_market_sandbox_review";
+
+    document.getElementById("connectBtn").addEventListener("click", function () {
+      if (CLIENT_KEY === "PASTE_YOUR_SANDBOX_CLIENT_KEY_HERE") {
+        alert("Paste your Sandbox Client Key into index.html first.");
+        return;
+      }
+      const authUrl =
+        "https://www.tiktok.com/v2/auth/authorize/" +
+        "?client_key=" + encodeURIComponent(CLIENT_KEY) +
+        "&scope=" + encodeURIComponent(SCOPE) +
+        "&response_type=code" +
+        "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
+        "&state=" + encodeURIComponent(STATE);
+      window.location.href = authUrl;
+    });
+  </script>
 </body>
 </html>
