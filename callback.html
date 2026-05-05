@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="gm-icon.png" />
   <title>Genie Market Callback</title>
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#06111f;color:#eef4ff;display:flex;align-items:center;justify-content:center;min-height:100vh}
-    .box{max-width:760px;width:92%;background:#0d1b2d;border:1px solid #193454;border-radius:18px;padding:28px;text-align:center}
-    h1{margin:0 0 12px;font-size:34px}
-    p{margin:8px 0;color:#b8c7de;line-height:1.6;font-size:18px}
-    .ok{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:999px;background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);color:#8ef0b8;font-weight:700}
+    :root {
+      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --accent:#4da3ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
+    .brand img{width:42px;height:42px;border-radius:12px}
+    .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
+    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}
+    h1{font-size:48px;margin:28px 0 12px}
+    h2{font-size:28px;margin:28px 0 10px}
+    p, li{font-size:18px;line-height:1.7;color:var(--muted)}
+    a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;background:var(--panel);color:var(--text)}
+    .notice{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    .footer{padding:26px 0 8px;color:#9eb0c9}
+    @media (max-width:900px){.nav{display:none} h1{font-size:38px}}
   </style>
+
 </head>
 <body>
-  <div class="box">
-    <h1>Authorization Complete</h1>
-    <p>Genie Market received the TikTok Sandbox authorization response.</p>
-    <p class="ok">Redirecting to Demo Dashboard...</p>
+  <div class="wrap" style="min-height:100vh;display:flex;align-items:center;justify-content:center">
+    <div class="panel" style="max-width:760px;width:100%;text-align:center">
+      <div class="brand" style="justify-content:center"><img src="gm-icon.png" alt="Genie Market icon"><span>Genie Market</span></div>
+      <h1>Authorization Complete</h1>
+      <p>Genie Market received the TikTok Sandbox authorization response.</p>
+      <div class="notice" style="display:inline-block">Redirecting to Demo Dashboard...</div>
+    </div>
   </div>
-
   <script>
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code") || "";
     const state = params.get("state") || "";
     const error = params.get("error") || "";
-
     localStorage.setItem("gm_tiktok_code", code);
     localStorage.setItem("gm_tiktok_state", state);
     localStorage.setItem("gm_tiktok_error", error);
     localStorage.setItem("gm_connected", error ? "0" : "1");
-
     setTimeout(() => {
       window.location.href = "demo.html?connected=" + (error ? "0" : "1");
     }, 1400);

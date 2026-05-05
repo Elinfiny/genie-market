@@ -1,181 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="gm-icon.png" />
   <title>Terms of Service | Genie Market</title>
-  <meta name="description" content="Terms of Service for Genie Market." />
   <style>
     :root {
-      --bg: #0f1115;
-      --panel: #171a21;
-      --text: #f4f7fb;
-      --muted: #b7c0d1;
-      --accent: #8bc3ff;
-      --max: 920px;
+      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --accent:#4da3ff;
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    .wrap {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-      padding: 32px 0 64px;
-    }
-
-    .panel {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 28px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    h1, h2 { line-height: 1.2; }
-    h1 { margin-top: 0; }
-    h2 { margin-top: 28px; }
-
-    p, li {
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
+    .brand img{width:42px;height:42px;border-radius:12px}
+    .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
+    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}
+    h1{font-size:48px;margin:28px 0 12px}
+    h2{font-size:28px;margin:28px 0 10px}
+    p, li{font-size:18px;line-height:1.7;color:var(--muted)}
+    a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;background:var(--panel);color:var(--text)}
+    .notice{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    .footer{padding:26px 0 8px;color:#9eb0c9}
+    @media (max-width:900px){.nav{display:none} h1{font-size:38px}}
   </style>
+
 </head>
 <body>
   <div class="wrap">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
+    <div class="top">
+      <div class="brand"><img src="gm-icon.png" alt="Genie Market icon"><span>Genie Market</span></div>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="demo.html">Demo Dashboard</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
     </div>
 
+    <h1>Terms of Service</h1>
     <div class="panel">
-      <h1>Terms of Service</h1>
-      <p class="meta">Last updated: April 2026</p>
-
-      <p>
-        These Terms of Service govern access to and use of the Genie Market website and related services.
-        By accessing or using the service, you agree to these Terms.
-      </p>
-
-      <h2>1. Service Description</h2>
-      <p>
-        Genie Market is an operational service used to organize analytics, workflow data, content-related
-        records, and product validation information. Features may change over time without prior notice.
-      </p>
-
-      <h2>2. Eligibility</h2>
-      <p>
-        You may use the service only if you are legally permitted to do so under applicable law and have
-        the authority to agree to these Terms.
-      </p>
-
-      <h2>3. User Responsibilities</h2>
-      <p>You agree not to:</p>
+      <p>Genie Market is a website application for managed TikTok creator and business account review and dashboard display.</p>
+      <h2>Use of the Service</h2>
+      <p>Users may connect a TikTok account through TikTok Login and authorize approved access in order to display profile and recent post information on the Genie Market website dashboard.</p>
+      <h2>Authorized Scopes</h2>
       <ul>
-        <li>Use the service for unlawful, fraudulent, or misleading purposes.</li>
-        <li>Interfere with the integrity, security, or availability of the service.</li>
-        <li>Attempt unauthorized access to accounts, systems, or connected services.</li>
-        <li>Use third-party data in a way that violates platform terms or applicable law.</li>
+        <li><b>user.info.basic</b> — connected account profile display</li>
+        <li><b>video.list</b> — recent post display in the dashboard</li>
       </ul>
-
-      <h2>4. Third-Party Platforms</h2>
-      <p>
-        Genie Market may interact with third-party platforms and infrastructure providers. Use of those
-        services may also be subject to their own terms, policies, and technical requirements.
-      </p>
-
-      <h2>5. Authorized Integrations</h2>
-      <p>
-        Some features may require user authorization through approved third-party login or API flows.
-        Users are responsible for ensuring they have the right to connect the accounts or data sources they authorize.
-      </p>
-
-      <h2>6. Intellectual Property</h2>
-      <p>
-        Unless otherwise stated, the Genie Market website, service structure, and related materials are owned
-        or controlled by Genie Market or its operator and are protected by applicable intellectual property laws.
-      </p>
-
-      <h2>7. Availability</h2>
-      <p>
-        The service may be modified, suspended, restricted, or discontinued at any time. We do not guarantee
-        uninterrupted or error-free availability.
-      </p>
-
-      <h2>8. Disclaimer</h2>
-      <p>
-        The service is provided on an “as is” and “as available” basis to the maximum extent permitted by law.
-        We disclaim warranties of any kind, whether express, implied, or statutory, including implied warranties
-        of merchantability, fitness for a particular purpose, and non-infringement.
-      </p>
-
-      <h2>9. Limitation of Liability</h2>
-      <p>
-        To the maximum extent permitted by law, Genie Market and its operator shall not be liable for indirect,
-        incidental, consequential, special, exemplary, or punitive damages, or for loss of data, revenue, profits,
-        business opportunities, or goodwill arising out of or related to use of the service.
-      </p>
-
-      <h2>10. Indemnification</h2>
-      <p>
-        You agree to defend, indemnify, and hold harmless Genie Market and its operator from claims, liabilities,
-        damages, losses, and expenses arising from your use of the service, your violation of these Terms, or your
-        violation of applicable law or third-party rights.
-      </p>
-
-      <h2>11. Termination</h2>
-      <p>
-        We may suspend or terminate access to the service at any time, with or without notice, if we believe
-        access creates legal, security, operational, or policy risk.
-      </p>
-
-      <h2>12. Governing Law</h2>
-      <p>
-        These Terms shall be governed by and interpreted in accordance with the laws applicable in the operator’s
-        jurisdiction, without regard to conflict of law principles, unless otherwise required by applicable law.
-      </p>
-
-      <h2>13. Changes to These Terms</h2>
-      <p>
-        We may revise these Terms from time to time. Continued use of the service after updated Terms are posted
-        constitutes acceptance of the revised Terms.
-      </p>
-
-      <h2>14. Contact</h2>
-      <p>
-        For legal or service questions, contact:
-        <a href="mailto:contact.geniemarket@gmail.com">contact.geniemarket@gmail.com</a>
-      </p>
+      <h2>Restrictions</h2>
+      <p>Genie Market only uses approved TikTok account access for the dashboard functions described on the website. Unauthorized or unrelated access is not requested.</p>
+      <h2>Contact</h2>
+      <p>For terms questions, contact: contact.geniemarket@gmail.com</p>
     </div>
+
+    <div class="footer">Genie Market Terms of Service</div>
   </div>
 </body>
 </html>
