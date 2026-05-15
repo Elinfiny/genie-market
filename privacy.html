@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="gm-icon.png" />
   <title>Privacy Policy | Genie Market</title>
   <style>
-    :root {
+    :root {{
       --bg:#06111f;
       --panel:#0d1b2d;
       --panel2:#10243d;
@@ -17,82 +17,37 @@
       --accent:#4da3ff;
       --accent-border:#70b7ff;
       --success:#43d38d;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);
-      color:var(--text)
-    }
-    .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    .top{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:18px 0;border-bottom:1px solid var(--line)
-    }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
-    .brand img{width:42px;height:42px;border-radius:12px;object-fit:cover}
-    .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
-    .panel{
-      background:linear-gradient(180deg,var(--panel2),var(--panel));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:24px
-    }
-    .panel-tight{
-      background:linear-gradient(180deg,var(--panel2),var(--panel));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px
-    }
-    h1{font-size:52px;line-height:1.08;margin:28px 0 14px}
-    h2{font-size:28px;margin:26px 0 10px}
-    h3{font-size:22px;margin:0 0 10px}
-    p, li{font-size:18px;line-height:1.7;color:var(--muted)}
-    ul{padding-left:24px}
-    .badge{
-      display:inline-block;padding:10px 14px;border:1px solid var(--line);
-      background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;
-      font-weight:700;font-size:14px
-    }
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
-    .btn, .btn-primary{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:58px;padding:0 24px;border-radius:14px;font-weight:700;
-      font-size:18px;text-decoration:none;cursor:pointer
-    }
-    .btn{
-      border:1px solid var(--line);background:var(--panel);color:var(--text)
-    }
-    .btn-primary{
-      border:1px solid var(--accent-border);background:var(--accent);color:#04101d
-    }
-    .notice{
-      margin:18px 0;padding:16px 18px;border:1px solid #295174;
-      background:rgba(34,70,104,.35);border-radius:16px;font-size:18px
-    }
-    .footer{padding:26px 0 8px;color:#9eb0c9}
-    .muted{color:var(--muted)}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .stats{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px}
-    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .post-thumb{
-      height:220px;background:linear-gradient(180deg,#38557c,#24344d);
-      display:flex;align-items:center;justify-content:center;color:#d7e7ff;
-      font-size:22px;text-align:center;padding:18px;border-radius:12px
-    }
-    .tag{
-      display:inline-block;padding:8px 12px;border-radius:999px;
-      background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);
-      color:#8ef0b8;font-weight:700
-    }
-    @media (max-width:900px){
-      .nav{display:none}
-      h1{font-size:38px}
-      .grid-3,.grid-4,.stats,.posts{grid-template-columns:1fr}
-      .posts-panel{grid-column:auto !important}
-    }
+      --warn:#ffd28a;
+    }}
+    *{{box-sizing:border-box}}
+    body{{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}}
+    .wrap{{max-width:1080px;margin:0 auto;padding:24px}}
+    .top{{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}}
+    .brand{{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}}
+    .brand img{{width:42px;height:42px;border-radius:12px;object-fit:cover}}
+    .nav a{{color:#9dc9ff;text-decoration:none;margin-left:18px}}
+    .panel{{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}}
+    .panel-tight{{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px}}
+    h1{{font-size:52px;line-height:1.08;margin:28px 0 14px}}
+    h2{{font-size:28px;margin:26px 0 10px}}
+    h3{{font-size:22px;margin:0 0 10px}}
+    p, li{{font-size:18px;line-height:1.7;color:var(--muted)}}
+    ul{{padding-left:24px}}
+    .badge{{display:inline-block;padding:10px 14px;border:1px solid var(--line);background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;font-weight:700;font-size:14px}}
+    .actions{{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}}
+    .btn, .btn-primary{{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 24px;border-radius:14px;font-weight:700;font-size:18px;text-decoration:none;cursor:pointer}}
+    .btn{{border:1px solid var(--line);background:var(--panel);color:var(--text)}}
+    .btn-primary{{border:1px solid var(--accent-border);background:var(--accent);color:#04101d}}
+    .notice{{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}}
+    .footer{{padding:26px 0 8px;color:#9eb0c9}}
+    .muted{{color:var(--muted)}}
+    .grid-3{{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}}
+    .grid-4{{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}}
+    .stats{{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px}}
+    .posts{{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}}
+    .post-thumb{{height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px}}
+    .tag{{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);color:#8ef0b8;font-weight:700}}
+    @media (max-width:900px){{.nav{{display:none}} h1{{font-size:38px}} .grid-3,.grid-4,.stats,.posts{{grid-template-columns:1fr}} .posts-panel{{grid-column:auto !important}}}}
   </style>
 
 </head>
