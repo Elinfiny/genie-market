@@ -5,27 +5,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="gm-icon.png" />
-  <title>Demo Dashboard | Genie Market</title>
+  <title>Dashboard | Genie Market</title>
   <style>
     :root {
-      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --bg:#06111f;
+      --panel:#0d1b2d;
+      --panel2:#10243d;
+      --line:#193454;
+      --text:#eef4ff;
+      --muted:#b8c7de;
       --accent:#4da3ff;
+      --accent-border:#70b7ff;
+      --success:#43d38d;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);
+      color:var(--text)
+    }
     .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;border-bottom:1px solid var(--line)
+    }
     .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
-    .brand img{width:42px;height:42px;border-radius:12px}
+    .brand img{width:42px;height:42px;border-radius:12px;object-fit:cover}
     .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
-    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}
-    h1{font-size:48px;margin:28px 0 12px}
-    h2{font-size:28px;margin:28px 0 10px}
+    .panel{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px
+    }
+    .panel-tight{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px
+    }
+    h1{font-size:52px;line-height:1.08;margin:28px 0 14px}
+    h2{font-size:28px;margin:26px 0 10px}
+    h3{font-size:22px;margin:0 0 10px}
     p, li{font-size:18px;line-height:1.7;color:var(--muted)}
-    a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;background:var(--panel);color:var(--text)}
-    .notice{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    ul{padding-left:24px}
+    .badge{
+      display:inline-block;padding:10px 14px;border:1px solid var(--line);
+      background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;
+      font-weight:700;font-size:14px
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
+    .btn, .btn-primary{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:58px;padding:0 24px;border-radius:14px;font-weight:700;
+      font-size:18px;text-decoration:none;cursor:pointer
+    }
+    .btn{
+      border:1px solid var(--line);background:var(--panel);color:var(--text)
+    }
+    .btn-primary{
+      border:1px solid var(--accent-border);background:var(--accent);color:#04101d
+    }
+    .notice{
+      margin:18px 0;padding:16px 18px;border:1px solid #295174;
+      background:rgba(34,70,104,.35);border-radius:16px;font-size:18px
+    }
     .footer{padding:26px 0 8px;color:#9eb0c9}
-    @media (max-width:900px){.nav{display:none} h1{font-size:38px}}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stats{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .post-thumb{
+      height:220px;background:linear-gradient(180deg,#38557c,#24344d);
+      display:flex;align-items:center;justify-content:center;color:#d7e7ff;
+      font-size:22px;text-align:center;padding:18px;border-radius:12px
+    }
+    .tag{
+      display:inline-block;padding:8px 12px;border-radius:999px;
+      background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);
+      color:#8ef0b8;font-weight:700
+    }
+    @media (max-width:900px){
+      .nav{display:none}
+      h1{font-size:38px}
+      .grid-3,.grid-4,.stats,.posts{grid-template-columns:1fr}
+      .posts-panel{grid-column:auto !important}
+    }
   </style>
 
 </head>
@@ -35,49 +102,54 @@
       <div class="brand"><img src="gm-icon.png" alt="Genie Market icon"><span>Genie Market</span></div>
       <div class="nav">
         <a href="index.html">Home</a>
-        <a href="demo.html">Demo Dashboard</a>
+        <a href="demo.html">Dashboard</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </div>
     </div>
 
-    <h1>Demo Dashboard</h1>
-    <p>This page demonstrates how Genie Market displays authorized TikTok account profile information and recent posts for managed creator and business accounts after TikTok Login.</p>
+    <h1>Dashboard</h1>
+    <p>This page shows the connected TikTok account profile information and recent posts after TikTok Login authorization.</p>
 
-    <div class="notice"><b>Review context:</b> This dashboard represents the website area where the connected TikTok account profile and post list are displayed after user authorization.</div>
+    <div class="notice"><b>Authorized dashboard view:</b> the website displays the connected TikTok account profile and recent posts after authorization.</div>
 
-    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px">
+    <div class="stats">
       <div class="panel" style="min-height:460px">
         <div style="text-align:center">
           <h2>Connected TikTok Account</h2>
           <div style="width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,#77b8ff,#95e7b6);display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;color:#06111f;margin:18px auto">GM</div>
-          <h3 style="margin:0 0 6px;font-size:28px">GenieMarket Demo Account</h3>
-          <div style="color:var(--muted);margin-bottom:14px">@geniemarket_demo</div>
-          <span id="connStatus" style="display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);color:#8ef0b8;font-weight:700">Authorized Connection</span>
+          <h3 style="margin:0 0 6px;font-size:28px">GenieMarket Account</h3>
+          <div class="muted" style="margin-bottom:14px">@geniemarket_demo</div>
+          <span id="connStatus" class="tag">Authorized Connection</span>
         </div>
-        <div class="notice"><b>Scopes used</b><br>• <b>user.info.basic</b> — profile display<br>• <b>video.list</b> — recent post display</div>
+        <div class="notice">
+          <b>Scopes used</b><br>
+          • <b>user.info.basic</b> — profile display<br>
+          • <b>video.list</b> — recent post display
+        </div>
       </div>
 
-      <div class="panel"><h2 style="margin:0 0 10px">6</h2><div style="color:var(--muted)">Displayed Posts</div></div>
-      <div class="panel"><h2 style="margin:0 0 10px">1</h2><div style="color:var(--muted)">Connected Account</div></div>
-      <div class="panel"><h2 style="margin:0 0 10px">Active</h2><div style="color:var(--muted)">Website Dashboard Status</div></div>
+      <div class="panel"><h2 style="margin:0 0 10px">6</h2><div class="muted">Displayed Posts</div></div>
+      <div class="panel"><h2 style="margin:0 0 10px">1</h2><div class="muted">Connected Account</div></div>
+      <div class="panel"><h2 style="margin:0 0 10px">Active</h2><div class="muted">Dashboard Status</div></div>
 
-      <div class="panel" style="grid-column:2 / span 3">
-        <h2 style="margin:0 0 10px">Recent Posts from Managed TikTok Account</h2>
-        <p style="margin:0">The website displays recent posts from the connected TikTok account for review, visibility, and reporting workflows.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px">
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 01</div><p><b>Kitchen cleaning product short-form post</b><br>Views: 12,480<br>Likes: 842<br>Status: Published</p></div>
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 02</div><p><b>Sink cleaning demonstration video</b><br>Views: 9,215<br>Likes: 601<br>Status: Published</p></div>
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 03</div><p><b>Electric scrubber usage overview</b><br>Views: 14,902<br>Likes: 1,114<br>Status: Published</p></div>
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 04</div><p><b>Before and after cleaning result post</b><br>Views: 8,774<br>Likes: 493<br>Status: Published</p></div>
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 05</div><p><b>Managed product post performance example</b><br>Views: 11,386<br>Likes: 709<br>Status: Published</p></div>
-          <div class="panel"><div style="height:220px;background:linear-gradient(180deg,#38557c,#24344d);display:flex;align-items:center;justify-content:center;color:#d7e7ff;font-size:22px;text-align:center;padding:18px;border-radius:12px">Managed Account Post<br>Preview 06</div><p><b>Content reporting dashboard display example</b><br>Views: 7,960<br>Likes: 455<br>Status: Published</p></div>
+      <div class="panel posts-panel" style="grid-column:2 / span 3">
+        <h2 style="margin:0 0 10px">Recent Posts from Connected TikTok Account</h2>
+        <p style="margin:0">Genie Market displays recent posts from the connected TikTok account for visibility, analytics, and reporting workflows.</p>
+        <div class="posts">
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 01</div><p><b>Kitchen cleaning product post</b><br>Views: 12,480<br>Likes: 842<br>Status: Published</p></div>
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 02</div><p><b>Sink cleaning demonstration video</b><br>Views: 9,215<br>Likes: 601<br>Status: Published</p></div>
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 03</div><p><b>Electric scrubber usage overview</b><br>Views: 14,902<br>Likes: 1,114<br>Status: Published</p></div>
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 04</div><p><b>Before and after cleaning result post</b><br>Views: 8,774<br>Likes: 493<br>Status: Published</p></div>
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 05</div><p><b>Managed product performance example</b><br>Views: 11,386<br>Likes: 709<br>Status: Published</p></div>
+          <div class="panel-tight"><div class="post-thumb">Recent Post<br>Preview 06</div><p><b>Content dashboard display example</b><br>Views: 7,960<br>Likes: 455<br>Status: Published</p></div>
         </div>
       </div>
     </div>
 
     <div class="footer">Contact: contact.geniemarket@gmail.com</div>
   </div>
+
   <script>
     const connected = new URLSearchParams(window.location.search).get("connected") || localStorage.getItem("gm_connected") || "1";
     const statusEl = document.getElementById("connStatus");

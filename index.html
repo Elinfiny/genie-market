@@ -8,24 +8,91 @@
   <title>Genie Market</title>
   <style>
     :root {
-      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --bg:#06111f;
+      --panel:#0d1b2d;
+      --panel2:#10243d;
+      --line:#193454;
+      --text:#eef4ff;
+      --muted:#b8c7de;
       --accent:#4da3ff;
+      --accent-border:#70b7ff;
+      --success:#43d38d;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);
+      color:var(--text)
+    }
     .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;border-bottom:1px solid var(--line)
+    }
     .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
-    .brand img{width:42px;height:42px;border-radius:12px}
+    .brand img{width:42px;height:42px;border-radius:12px;object-fit:cover}
     .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
-    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}
-    h1{font-size:48px;margin:28px 0 12px}
-    h2{font-size:28px;margin:28px 0 10px}
+    .panel{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px
+    }
+    .panel-tight{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px
+    }
+    h1{font-size:52px;line-height:1.08;margin:28px 0 14px}
+    h2{font-size:28px;margin:26px 0 10px}
+    h3{font-size:22px;margin:0 0 10px}
     p, li{font-size:18px;line-height:1.7;color:var(--muted)}
-    a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;background:var(--panel);color:var(--text)}
-    .notice{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    ul{padding-left:24px}
+    .badge{
+      display:inline-block;padding:10px 14px;border:1px solid var(--line);
+      background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;
+      font-weight:700;font-size:14px
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
+    .btn, .btn-primary{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:58px;padding:0 24px;border-radius:14px;font-weight:700;
+      font-size:18px;text-decoration:none;cursor:pointer
+    }
+    .btn{
+      border:1px solid var(--line);background:var(--panel);color:var(--text)
+    }
+    .btn-primary{
+      border:1px solid var(--accent-border);background:var(--accent);color:#04101d
+    }
+    .notice{
+      margin:18px 0;padding:16px 18px;border:1px solid #295174;
+      background:rgba(34,70,104,.35);border-radius:16px;font-size:18px
+    }
     .footer{padding:26px 0 8px;color:#9eb0c9}
-    @media (max-width:900px){.nav{display:none} h1{font-size:38px}}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stats{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .post-thumb{
+      height:220px;background:linear-gradient(180deg,#38557c,#24344d);
+      display:flex;align-items:center;justify-content:center;color:#d7e7ff;
+      font-size:22px;text-align:center;padding:18px;border-radius:12px
+    }
+    .tag{
+      display:inline-block;padding:8px 12px;border-radius:999px;
+      background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);
+      color:#8ef0b8;font-weight:700
+    }
+    @media (max-width:900px){
+      .nav{display:none}
+      h1{font-size:38px}
+      .grid-3,.grid-4,.stats,.posts{grid-template-columns:1fr}
+      .posts-panel{grid-column:auto !important}
+    }
   </style>
 
 </head>
@@ -35,44 +102,51 @@
       <div class="brand"><img src="gm-icon.png" alt="Genie Market icon"><span>Genie Market</span></div>
       <div class="nav">
         <a href="index.html">Home</a>
-        <a href="demo.html">Demo Dashboard</a>
+        <a href="demo.html">Dashboard</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </div>
     </div>
 
     <section style="padding:48px 0 28px">
-      <div class="panel">
-        <div style="display:inline-block;padding:10px 14px;border:1px solid var(--line);background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;font-weight:700;font-size:14px">Managed TikTok Account Analytics</div>
-        <h1>Authorized TikTok profile and post display for managed creator and business accounts.</h1>
-        <p>Genie Market is a web application for managed TikTok creator and business accounts. Users connect through TikTok Login, authorize access in Sandbox, and Genie Market displays profile and recent post data in the website dashboard.</p>
+      <span class="badge">Managed TikTok Account Visibility</span>
+      <h1>Connect a TikTok account and display authorized profile information and recent posts in a website dashboard.</h1>
+      <p>Genie Market is a web application for managed TikTok creator and business accounts. Users connect through TikTok Login, authorize access, and Genie Market displays profile and recent post data in a dashboard for visibility, analytics, and reporting workflows.</p>
 
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px">
-          <button id="connectBtn" style="display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 24px;border-radius:14px;border:1px solid #70b7ff;background:var(--accent);color:#04101d;font-weight:700;font-size:18px;cursor:pointer">Connect with TikTok</button>
-          <a class="btn" href="demo.html">Open Demo Dashboard</a>
-          <a class="btn" href="privacy.html">Privacy Policy</a>
-          <a class="btn" href="terms.html">Terms of Service</a>
-        </div>
+      <div class="actions">
+        <button id="connectBtn" class="btn-primary">Connect with TikTok</button>
+        <a class="btn" href="demo.html">Open Dashboard</a>
+        <a class="btn" href="privacy.html">Privacy Policy</a>
+        <a class="btn" href="terms.html">Terms of Service</a>
+      </div>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0">
-          <div class="panel"><h2>Authorized Access</h2><p>Users connect TikTok accounts through approved TikTok Login flows and grant access only to the scopes required for profile and post display.</p></div>
-          <div class="panel"><h2>Profile and Post Display</h2><p>Genie Market displays connected account information and recent posts in a website dashboard for review, reporting, and managed account visibility.</p></div>
-          <div class="panel"><h2>Reporting Workflow</h2><p>The displayed account data supports structured reporting and analytics workflows for managed TikTok creator and business accounts.</p></div>
+      <div class="grid-3" style="margin:34px 0">
+        <div class="panel">
+          <h3>Authorized Access</h3>
+          <p>Users connect TikTok accounts through TikTok Login and grant access only to the scopes required for profile and recent post display.</p>
         </div>
+        <div class="panel">
+          <h3>Profile Display</h3>
+          <p>Genie Market displays connected TikTok account profile information inside the website dashboard after authorization.</p>
+        </div>
+        <div class="panel">
+          <h3>Recent Post Display</h3>
+          <p>Genie Market displays recent posts from the connected TikTok account in the dashboard for managed account workflows.</p>
+        </div>
+      </div>
 
-        <h2>How Genie Market Works</h2>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-          <div class="panel"><b style="font-size:24px">1. Connect Account</b><p>User grants permission through TikTok Login.</p></div>
-          <div class="panel"><b style="font-size:24px">2. Retrieve Profile</b><p>Basic account information is used to identify the connected account.</p></div>
-          <div class="panel"><b style="font-size:24px">3. Retrieve Posts</b><p>The app retrieves the account's video list for website display.</p></div>
-          <div class="panel"><b style="font-size:24px">4. Show Dashboard</b><p>The website displays managed account profile and recent posts.</p></div>
-        </div>
+      <h2>How Genie Market Works</h2>
+      <div class="grid-4">
+        <div class="panel-tight"><b style="font-size:24px">1. Connect Account</b><p>User starts TikTok Login from the website.</p></div>
+        <div class="panel-tight"><b style="font-size:24px">2. Authorize Access</b><p>User authorizes the requested TikTok scopes.</p></div>
+        <div class="panel-tight"><b style="font-size:24px">3. Retrieve Data</b><p>Genie Market receives authorized profile and recent post data.</p></div>
+        <div class="panel-tight"><b style="font-size:24px">4. Show Dashboard</b><p>The website displays the connected account and recent posts.</p></div>
+      </div>
 
-        <div class="notice">
-          <b>Scopes Used:</b><br>
-          • <b>user.info.basic</b> — used to display the connected TikTok account profile information.<br>
-          • <b>video.list</b> — used to display the connected TikTok account’s recent videos on the website dashboard.
-        </div>
+      <div class="notice">
+        <b>Scopes Used</b><br>
+        • <b>user.info.basic</b> — connected TikTok account profile display<br>
+        • <b>video.list</b> — recent TikTok post display in the dashboard
       </div>
     </section>
 
@@ -80,10 +154,10 @@
   </div>
 
   <script>
-    const CLIENT_KEY = "sbaw41vjjdrdrlgz0t";
+    const CLIENT_KEY = "PASTE_YOUR_SANDBOX_CLIENT_KEY_HERE";
     const REDIRECT_URI = "https://elinfiny.github.io/genie-market/callback.html";
     const SCOPE = "user.info.basic,video.list";
-    const STATE = "genie_market_sandbox_review";
+    const STATE = "genie_market_review_flow";
 
     document.getElementById("connectBtn").addEventListener("click", function () {
       if (CLIENT_KEY === "PASTE_YOUR_SANDBOX_CLIENT_KEY_HERE") {

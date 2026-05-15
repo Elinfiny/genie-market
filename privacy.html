@@ -8,24 +8,91 @@
   <title>Privacy Policy | Genie Market</title>
   <style>
     :root {
-      --bg:#06111f; --panel:#0d1b2d; --panel2:#10243d; --line:#193454; --text:#eef4ff; --muted:#b8c7de;
+      --bg:#06111f;
+      --panel:#0d1b2d;
+      --panel2:#10243d;
+      --line:#193454;
+      --text:#eef4ff;
+      --muted:#b8c7de;
       --accent:#4da3ff;
+      --accent-border:#70b7ff;
+      --success:#43d38d;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);color:var(--text)}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#04101d,#071426 55%,#06111f);
+      color:var(--text)
+    }
     .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;border-bottom:1px solid var(--line)
+    }
     .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px}
-    .brand img{width:42px;height:42px;border-radius:12px}
+    .brand img{width:42px;height:42px;border-radius:12px;object-fit:cover}
     .nav a{color:#9dc9ff;text-decoration:none;margin-left:18px}
-    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px}
-    h1{font-size:48px;margin:28px 0 12px}
-    h2{font-size:28px;margin:28px 0 10px}
+    .panel{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px
+    }
+    .panel-tight{
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px
+    }
+    h1{font-size:52px;line-height:1.08;margin:28px 0 14px}
+    h2{font-size:28px;margin:26px 0 10px}
+    h3{font-size:22px;margin:0 0 10px}
     p, li{font-size:18px;line-height:1.7;color:var(--muted)}
-    a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px;background:var(--panel);color:var(--text)}
-    .notice{margin:18px 0;padding:16px 18px;border:1px solid #295174;background:rgba(34,70,104,.35);border-radius:16px;font-size:18px}
+    ul{padding-left:24px}
+    .badge{
+      display:inline-block;padding:10px 14px;border:1px solid var(--line);
+      background:rgba(24,52,84,.45);border-radius:999px;color:#8dd2ff;
+      font-weight:700;font-size:14px
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
+    .btn, .btn-primary{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:58px;padding:0 24px;border-radius:14px;font-weight:700;
+      font-size:18px;text-decoration:none;cursor:pointer
+    }
+    .btn{
+      border:1px solid var(--line);background:var(--panel);color:var(--text)
+    }
+    .btn-primary{
+      border:1px solid var(--accent-border);background:var(--accent);color:#04101d
+    }
+    .notice{
+      margin:18px 0;padding:16px 18px;border:1px solid #295174;
+      background:rgba(34,70,104,.35);border-radius:16px;font-size:18px
+    }
     .footer{padding:26px 0 8px;color:#9eb0c9}
-    @media (max-width:900px){.nav{display:none} h1{font-size:38px}}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stats{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:16px;margin-top:18px}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .post-thumb{
+      height:220px;background:linear-gradient(180deg,#38557c,#24344d);
+      display:flex;align-items:center;justify-content:center;color:#d7e7ff;
+      font-size:22px;text-align:center;padding:18px;border-radius:12px
+    }
+    .tag{
+      display:inline-block;padding:8px 12px;border-radius:999px;
+      background:rgba(67,211,141,.14);border:1px solid rgba(67,211,141,.45);
+      color:#8ef0b8;font-weight:700
+    }
+    @media (max-width:900px){
+      .nav{display:none}
+      h1{font-size:38px}
+      .grid-3,.grid-4,.stats,.posts{grid-template-columns:1fr}
+      .posts-panel{grid-column:auto !important}
+    }
   </style>
 
 </head>
@@ -35,25 +102,66 @@
       <div class="brand"><img src="gm-icon.png" alt="Genie Market icon"><span>Genie Market</span></div>
       <div class="nav">
         <a href="index.html">Home</a>
-        <a href="demo.html">Demo Dashboard</a>
+        <a href="demo.html">Dashboard</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </div>
     </div>
 
     <h1>Privacy Policy</h1>
+    <div class="notice"><b>Last updated:</b> May 2026</div>
+
     <div class="panel">
-      <p>Genie Market is a website used for managed TikTok creator and business account review, profile display, and recent post display.</p>
-      <p>When a user connects a TikTok account through TikTok Login, Genie Market may receive authorized account data that is limited to the approved scopes requested during authorization.</p>
-      <h2>Data Used</h2>
+      <p>Genie Market is a website application used to connect an authorized TikTok account through TikTok Login and display permitted account information and recent posts in a website dashboard for visibility, analytics, and managed account workflows.</p>
+
+      <h2>1. Who we are</h2>
+      <p>Genie Market is the operator of this website and the controller of the personal data processed through the Genie Market website for the purposes described in this Privacy Policy.</p>
+      <p>Contact email: contact.geniemarket@gmail.com</p>
+
+      <h2>2. Data we collect</h2>
+      <p>When a user connects a TikTok account through TikTok Login, Genie Market may receive and process only the data authorized by the user and permitted by the approved TikTok scopes used by the application.</p>
       <ul>
-        <li><b>user.info.basic</b> — used to display the connected TikTok account profile information.</li>
-        <li><b>video.list</b> — used to display recent posts from the connected TikTok account in the website dashboard.</li>
+        <li><b>user.info.basic</b>: basic TikTok account profile information used to identify and display the connected TikTok account in the website dashboard.</li>
+        <li><b>video.list</b>: recent TikTok post information used to display recent posts from the connected TikTok account in the website dashboard.</li>
       </ul>
-      <h2>Data Handling</h2>
-      <p>Genie Market uses authorized account information only for website dashboard display, review demonstration, and reporting workflow visibility. Genie Market does not request unrelated account permissions.</p>
-      <h2>Contact</h2>
-      <p>For privacy questions, contact: contact.geniemarket@gmail.com</p>
+      <p>Genie Market does not request unrelated TikTok scopes for this integration.</p>
+
+      <h2>3. How we use data</h2>
+      <ul>
+        <li>to authenticate and connect the TikTok account through TikTok Login;</li>
+        <li>to display the connected TikTok account profile in the Genie Market dashboard;</li>
+        <li>to display recent posts from the connected TikTok account in the Genie Market dashboard;</li>
+        <li>to support internal visibility, analytics, and reporting workflows for managed creator and business accounts;</li>
+        <li>to maintain and secure the website and integration flow.</li>
+      </ul>
+
+      <h2>4. Legal basis</h2>
+      <p>Genie Market processes authorized TikTok account data based on the user's authorization through TikTok Login and the operator's legitimate interest in providing the website dashboard functions described on this website.</p>
+
+      <h2>5. Data sharing</h2>
+      <p>Genie Market does not sell personal data. Genie Market may share data only when necessary to operate the website and its authorized integration flow, including with service providers that support website hosting, storage, maintenance, or security, and only to the extent necessary for those services.</p>
+      <p>Genie Market may also disclose information if required by applicable law, legal process, or lawful governmental request.</p>
+
+      <h2>6. Data retention</h2>
+      <p>Authorized TikTok account data is retained only for as long as reasonably necessary to operate the Genie Market dashboard functions, maintain the integration, comply with legal obligations, resolve disputes, or enforce applicable agreements.</p>
+
+      <h2>7. Security</h2>
+      <p>Genie Market uses reasonable administrative, technical, and organizational measures designed to protect authorized account data against unauthorized access, disclosure, alteration, or destruction. No system can be guaranteed to be completely secure.</p>
+
+      <h2>8. User rights and choices</h2>
+      <p>Users may stop using the service at any time. Users may revoke TikTok authorization through their TikTok account settings where available. Users may also contact Genie Market to request deletion or further information about data handled through the website.</p>
+
+      <h2>9. Children's privacy</h2>
+      <p>Genie Market is not directed to children and is not intended for use by individuals who are not legally permitted to authorize the use of their TikTok account.</p>
+
+      <h2>10. Third-party services</h2>
+      <p>The Genie Market website integrates with TikTok Login and may rely on third-party infrastructure providers for hosting or technical operations. Those services may be governed by their own terms and privacy policies.</p>
+
+      <h2>11. Changes to this Privacy Policy</h2>
+      <p>Genie Market may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised effective date.</p>
+
+      <h2>12. Contact</h2>
+      <p>For privacy questions or requests, contact: contact.geniemarket@gmail.com</p>
     </div>
 
     <div class="footer">Genie Market Privacy Policy</div>
